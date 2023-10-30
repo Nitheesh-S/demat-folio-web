@@ -1,7 +1,5 @@
-import './App.css'
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
-import { Login } from './pages/Login'
-import { Excel } from './pages/Excel'
+import { Folio } from './pages/Folio'
 
 function App() {
 
@@ -9,8 +7,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/excel" element={<Excel />} />
+          <Route path="/" element={<Folio />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </BrowserRouter>
