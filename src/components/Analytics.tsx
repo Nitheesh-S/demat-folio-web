@@ -22,6 +22,7 @@ export function Analytics() {
 
 	const handleChartChange = (e: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element> | React.FocusEvent<Element, Element> | null, value: string | null) => {
 		if (!value) return
+		console.log('e -->', e);
 		setChartType(value as chartTypeKeys)
 	}
 
