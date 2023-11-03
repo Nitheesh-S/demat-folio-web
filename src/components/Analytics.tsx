@@ -84,9 +84,24 @@ export function Analytics() {
 		["Symbol", "Invested", "Current Value"],
 		...investedVsCurrent.sort((a,b) => b[1] - a[1])
 	]
-
-
 	
+	const barChartOptions = {
+		bars: "horizontal",
+		legend: {
+			position: "bottom"
+		},
+		vAxis: {
+			textStyle: {
+				fontSize: 9
+			},
+		},
+		tooltip: {
+			textStyle: {
+				fontSize: 12
+			}
+		}
+	};
+
 	return (
 		<>
 			<Container maxWidth='md' sx={{marginTop: 4}}>
@@ -109,22 +124,7 @@ export function Analytics() {
 						<Chart 
 							chartType="BarChart"
 							data={profitAndLossChartData} 
-							options={{
-								bars: "horizontal",
-								legend: {
-									position: "bottom"
-								},
-								vAxis: {
-									textStyle: {
-										fontSize: 9
-									},
-								},
-								tooltip: {
-									textStyle: {
-										fontSize: 12
-									}
-								}
-							}}
+							options={barChartOptions}
 							width={"100%"}
 							height={"90vh"}
 						/>
@@ -132,22 +132,7 @@ export function Analytics() {
 						<Chart 
 							chartType="BarChart"
 							data={profitAndLossPercentageChartData} 
-							options={{
-								bars: "horizontal",
-								legend: {
-									position: "bottom"
-								},
-								vAxis: {
-									textStyle: {
-										fontSize: 9
-									},
-								},
-								tooltip: {
-									textStyle: {
-										fontSize: 12
-									}
-								}
-							}}
+							options={barChartOptions}
 							width={"100%"}
 							height={"90vh"}
 						/>
@@ -155,22 +140,7 @@ export function Analytics() {
 						<Chart 
 							chartType="BarChart"
 							data={investedVsCurrentChartData} 
-							options={{
-								bars: "horizontal",
-								legend: {
-									position: "bottom"
-								},
-								vAxis: {
-									textStyle: {
-										fontSize: 9
-									},
-								},
-								tooltip: {
-									textStyle: {
-										fontSize: 12
-									}
-								}
-							}}
+							options={barChartOptions}
 							width={"100%"}
 							height={"90vh"}
 						/>
