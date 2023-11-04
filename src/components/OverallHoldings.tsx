@@ -22,6 +22,7 @@ export function OverallHoldings() {
 			<Box sx={{ display: 'flex', gap: 1 }} mb={2}>
 				{accounts.map(account => (
 					<Chip
+						key={account.accountName}
 						endDecorator={<ChipDelete onDelete={() => removeAccountAndUpdateState && removeAccountAndUpdateState(account.accountName)} />}
 					>
 						{account.accountName}
